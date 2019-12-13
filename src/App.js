@@ -1,13 +1,10 @@
 import React from 'react';
 import { BrowserRouter,Switch,Route} from 'react-router-dom';
 import Homepage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shoppage.component';
 import './App.css';
 
-const Hatpage = () =>(
-    <div>
-    <h1>Hat list</h1>
-    </div>
-   );
+
 
 function App() {
   return (
@@ -15,7 +12,7 @@ function App() {
      <BrowserRouter>
      <Switch>
       <Route exact path='/' component={Homepage} />
-      <Route path='/hats' component={Hatpage} />
+      <Route path='/shop' component={ShopPage} />
      </Switch>
      </BrowserRouter>
     </div>
