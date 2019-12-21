@@ -15,11 +15,11 @@ import './sign-up.styles.scss';
               email:'',
               password:'',
               confirmPassword:''			
-		};
+		}
 	}
  handelSubmit = async event =>{
  	event.preventDefault();
- 	
+
  	 const {displayName,email,password,confirmPassword} = this.state;
  	 if (password!==confirmPassword) {
  	 	alert("both password not match");
@@ -30,7 +30,7 @@ import './sign-up.styles.scss';
           const {user} = await auth.createUserWithEmailAndPassword(
           	email,
           	password);
-          await createUserProfileDocument(user,{displayName});
+          await createUserProfileDocument(user, { displayName });
 
           this.setState({displayName:'',
               email:'',
@@ -38,13 +38,13 @@ import './sign-up.styles.scss';
               confirmPassword:''});
  	
  	 }catch(error) {
- 	 	console.log(error);
+ 	 	console.error(error);
  	 }
 
  }
 
  handelChange = event => {
- const {value,name} = event.target
+ const {name,value} = event.target
  this.setState({[name] : value});
 
  }
@@ -60,7 +60,7 @@ import './sign-up.styles.scss';
 				  type='text'
 				   name='displayName'
 				   value={displayName}
-				   handelChange={this.handelChange}
+				   onChange={this.handelChange}
 				   label='Display Name'
 				   required>
 				</FormInput>
@@ -68,7 +68,7 @@ import './sign-up.styles.scss';
 				  type='email'
 				   name='email'
 				   value={email}
-				   handelChange={this.handelChange}
+				   onChange={this.handelChange}
 				   label='Email'
 				   required>
 				</FormInput>
@@ -76,7 +76,7 @@ import './sign-up.styles.scss';
 				  type='password'
 				   name='password'
 				   value={password}
-				   handelChange={this.handelChange}
+				   onChange={this.handelChange}
 				   label='Password'
 				   required>
 				</FormInput>
@@ -84,7 +84,7 @@ import './sign-up.styles.scss';
 				  type='password'
 				   name='confirmPassword'
 				   value={confirmPassword}
-				   handelChange={this.handelChange}
+				   onChange={this.handelChange}
 				   label='Confirm Password'
 				   required>
 				</FormInput>
