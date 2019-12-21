@@ -47,7 +47,7 @@ componentDidMount(){
      <Switch>
       <Route exact path='/' component={Homepage} />
       <Route path='/shop' component={ShopPage} />
-      <Route path='/signin' 
+      <Route exact path='/signin' 
       render={() => this.props.currentUser ? <Redirect to='/' /> : <SignInAndSignUpPage />}
       />
      </Switch>
