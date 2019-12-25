@@ -19,4 +19,4 @@ import { createSelector} from 'reselect';
      [selectCartItems],
      cartItems => cartItems.reduce((accumulatedQ, cartItem) =>
 	   accumulatedQ + cartItem.quantity * cartItem.price ,0)
- 	)
+ 	);
